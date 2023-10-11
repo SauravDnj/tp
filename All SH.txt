@@ -1,0 +1,116 @@
+-> Write a shell script to find greatest amongst three numbers.
+echo "Enter Num1" read num1 echo "Enter
+Num2" read num2 echo "Enter Num3"
+read num3 if [
+$num1 -gt $num2 ]&& [ $num1 -gt $num3 ]
+then echo $num1
+elif [ $num2 -gt $num1 ]&& [ $num2 -gt
+$num3 ] then echo $num2
+else
+echo $num3
+fi
+
+
+->Write a shell script to find all prime numbers in given range.
+prime_1=0 echo "enter the
+range" read n
+echo "Prime number between 1 to $n
+is:" echo "1" echo "2"
+for
+((i=3;i<=n;))
+do
+for ((j=i1;j>=2;)) do
+if [ `expr $i % $j` -ne 0 ] ;
+then prime_1=1 else
+prime_1=0 break
+fi
+j=`expr $j - 1` done
+if [ $prime_1 -eq 1 ] ;
+then echo $i fi
+i=`expr $i + 1` done
+
+
+->Write a shell script to draw following pattern.
+rows=5
+for((i=1; i<=rows; i++)) do
+for((j=1; j<=i; j++))
+do echo -n "* "
+done echo done
+
+
+->Write a shell script to find sum of digits of a number.
+echo "How many number of terms to be generated ?"
+read n function fib
+{
+x=0 y=1 i=2 echo "Fibonacci Series up to $n terms :"
+echo "$x" echo "$y"
+while [ $i -lt $n ]
+do i=`expr $i + 1 `
+z=`expr $x + $y `
+echo "$z" x=$y
+y=$z
+done
+}
+r=`fib $n`
+echo "$r"
+
+
+
+
+->Write a menu driven shell script which accepts basic amount as an input and displays following options.
+a. Dearness allowance (90% of basic)
+b. Provident Fund F (12% of basic)
+c. House Rent Allowance ( 20% of basic + DA)
+d. Income tax deducted (5% of basic + DA + HRA)
+e. Take home salary (basic + DA + HRA – IT)
+
+echo -n Enter Amount:
+read amount
+echo "1. Dearness allowance(90% of amount)" echo
+"2. Provident Fund FCC 12% of amount)" echo "3.
+House Rentallowance (80% of amount + DA )" echo
+"4. Income tax deducted (5% of amount + DA +
+HRA)" echo "5. Take home salary (amount + DA +
+HRA - It)" echo -n "enter choice:" read choice
+a=`expr $amount \* 90 / 100` b=`expr $amount \*
+12 / 100` c=`expr $amount \* 20 / 100 + $a`
+d=`expr $amount \* 5 / 100 + $a + $c`
+e=`expr $amount \* $a + $c -
+$d` case $choice in
+1) echo "DA = $a" ;;
+2) echo "PF = $b" ;;
+3) echo "HRA = $c" ;;
+4) echo "IT = $d;;
+5) echo "THS = $e" ;;
+*)
+echo "invalid
+choice" exit 1
+;;
+Esa
+c
+
+
+
+->Write a shell script to find file permissions of user, group and others.
+echo "Enter file
+name" read fname
+if [ -e $fname ]
+then echo "file
+exists"
+if [ -r $fname -a -w $fname -a -x $fname ] then
+echo "have all permission"
+else
+echo "no permission"
+fi
+else
+echo "File not exists" fi
+
+
+
+
+->Write a shell script that accepts two files are identical or not
+read -p "Enter a string: " str length=${#str}
+i=$((length- 1)) while [ $i -ge0 ] do
+done
+revstr=$revstr${str:$i:1}i=$((i1)) echo "Reverse of $str is
+$revstr"
